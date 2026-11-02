@@ -1,0 +1,6 @@
+node_modules/
+.env
+data/
+.codex-auth/
+*.log
+
