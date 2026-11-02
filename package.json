@@ -1,0 +1,14 @@
+{
+  "name": "codex-plan-chat",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "auth": "node scripts/signin.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
+
