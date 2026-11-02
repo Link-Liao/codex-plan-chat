@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fa">
+  <title>Codex 简易对话</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">C</div>
+      <div><h1>Codex 简易对话</h1><p>使用你的 ChatGPT 计划额度</p></div>
+      <span class="status"><i></i> 私人实例</span>
+    </header>
+    <section class="chat" aria-live="polite">
+      <div class="welcome" id="welcome">
+        <div class="sparkle">✳</div>
+        <h2>你好，有什么想问的？</h2>
+        <p>这是一个最小聊天页面。输入问题后，Codex 会在服务器上生成回复。</p>
+        <button class="suggestion" data-prompt="你好，你是谁？">你好，你是谁？ <span>↗</span></button>
+      </div>
+      <div id="messages" class="messages"></div>
+    </section>
+    <form id="prompt-form" class="composer">
+      <textarea id="prompt" rows="1" maxlength="4000" placeholder="向 Codex 发送消息" aria-label="提示词" required></textarea>
+      <div class="composer-footer">
+        <span>最多 4000 字符</span>
+        <button id="send" type="submit" aria-label="发送">↑</button>
+      </div>
+    </form>
+    <footer>对话会使用账号当前可用的订阅额度。</footer>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>
+
