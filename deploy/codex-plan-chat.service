@@ -1,0 +1,27 @@
+[Unit]
+Description=Codex Plan Chat
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=codex-chat
+Group=codex-chat
+WorkingDirectory=/opt/codex-plan-chat
+EnvironmentFile=/etc/codex-plan-chat.env
+Environment=HOME=/var/lib/codex-plan-chat
+Environment=CODEX_HOME=/var/lib/codex-plan-chat/codex-home
+ExecStart=/usr/bin/node /opt/codex-plan-chat/server.mjs
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadOnlyPaths=/opt/codex-plan-chat
+ReadWritePaths=/var/lib/codex-plan-chat
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
+
