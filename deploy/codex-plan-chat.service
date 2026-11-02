@@ -11,7 +11,7 @@ WorkingDirectory=/opt/codex-plan-chat
 EnvironmentFile=/etc/codex-plan-chat.env
 Environment=HOME=/var/lib/codex-plan-chat
 Environment=CODEX_HOME=/var/lib/codex-plan-chat/codex-home
-ExecStart=/usr/bin/node /opt/codex-plan-chat/server.mjs
+ExecStart=/usr/local/bin/node /opt/codex-plan-chat/server.mjs
 Restart=on-failure
 RestartSec=5
 NoNewPrivileges=true
