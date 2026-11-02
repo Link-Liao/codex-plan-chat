@@ -141,7 +141,7 @@ async function codexReply(prompt) {
       if (msg.error) return fail(new Error(msg.error.message || 'Codex request failed.'));
       if (msg.id === 0) {
         send({ method: 'initialized', params: {} });
-        send({ method: 'thread/start', id: 1, params: { model, cwd: '/tmp', approvalPolicy: 'never', sandbox: 'read-only', serviceName: 'codex-plan-chat' } });
+        send({ method: 'thread/start', id: 1, params: { model, cwd: '/tmp', approvalPolicy: 'never', sandbox: 'read-only' } });
       } else if (msg.id === 1 && msg.result?.thread?.id) {
         threadId = msg.result.thread.id;
         send({ method: 'turn/start', id: 2, params: { threadId, input: [{ type: 'text', text: prompt }], model, cwd: '/tmp', approvalPolicy: 'never', sandboxPolicy: { type: 'readOnly' } } });
