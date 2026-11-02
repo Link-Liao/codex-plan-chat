@@ -152,7 +152,7 @@ async function codexReply(prompt) {
         finish(null, responseText.trim());
       }
     });
-    send({ method: 'initialize', id: 0, params: { clientInfo: { name: 'codex_plan_chat', title: 'Codex Plan Chat', version: '0.1.0' } } });
+    send({ method: 'initialize', id: 0, params: { clientInfo: { name: 'Codex Plan Chat', title: 'Codex Plan Chat', version: '0.1.0' } } });
   });
 }
 
