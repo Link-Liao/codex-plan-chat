@@ -83,7 +83,7 @@ const params = new URLSearchParams({
 const authorizeUrl = `${authBase}/api/accounts/authorize?${params}`;
 console.log('即将打开 OpenAI 登录页面。完成授权后此窗口会自动继续；此脚本不会显示访问令牌。');
 console.log(`VM host ID: ${extAgentHostId}`);
-const opener = process.platform === 'win32' ? ['cmd.exe', ['/c', 'start', '', authorizeUrl]] : process.platform === 'darwin' ? ['open', [authorizeUrl]] : ['xdg-open', [authorizeUrl]];
+const opener = process.platform === 'win32' ? ['explorer.exe', [authorizeUrl]] : process.platform === 'darwin' ? ['open', [authorizeUrl]] : ['xdg-open', [authorizeUrl]];
 const browser = spawn(opener[0], opener[1], { detached: true, stdio: 'ignore', windowsHide: true });
 browser.unref();
 
